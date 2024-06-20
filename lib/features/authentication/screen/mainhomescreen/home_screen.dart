@@ -9,7 +9,6 @@ import '../../../../utils/constants/text_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,33 +16,40 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             TPrimaryHeaderContainer(
-              child: TAppBar(
-                  title: Column(
-                    children: [
-                      Text(
-                        TTexts.homeAppbarTitle,
-                        style: Theme.of(context).textTheme.labelMedium!.apply(
-                              color: TColors.grey,
-                            ),
+              child: Column(
+                children: [
+                  TAppBar(
+                      title: Column(
+                        children: [
+                          Text(
+                            TTexts.homeAppbarTitle,
+                            style: Theme.of(context).textTheme.labelMedium!.apply(
+                                  color: TColors.grey,
+                                ),
+                          ),
+                          Text(
+                            TTexts.homeAppbarSubTitle,
+                            style: Theme.of(context).textTheme.labelMedium!.apply(
+                                  color: TColors.grey,
+                                ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        TTexts.homeAppbarSubTitle,
-                        style: Theme.of(context).textTheme.labelMedium!.apply(
-                              color: TColors.grey,
-                            ),
-                      ),
-                    ],
-                  ),
-                  actions: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Iconsax.shopping_bag))
-                  ]),
-            ),
-            const SizedBox(height: TSizes.spaceBtwItems,),
-            const Tsearchcontainers(
+                      actions: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Iconsax.shopping_bag))
+                      ]),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  const Tsearchcontainers(),
 
-            )
+
+
+
+                ],
+              ),
+            ),
+
           ],
         ),
       ),

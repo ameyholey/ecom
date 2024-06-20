@@ -8,7 +8,6 @@ import '../../../utils/constants/text_strings.dart';
 
 class Tsearchcontainers extends StatelessWidget {
   const Tsearchcontainers({super.key, });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
