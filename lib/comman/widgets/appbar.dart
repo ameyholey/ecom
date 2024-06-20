@@ -19,9 +19,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showBackArrow;
   final IconData? leadingIcon;
   final List<Widget>? actions;
-
   final VoidCallback? leadingOnPressed;
-
   get icon => null;
 
   @override
