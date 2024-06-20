@@ -4,6 +4,7 @@ import 'package:t_store/comman/custom_shapes/containers/primary_header_container
 import 'package:t_store/comman/widgets/appbar.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import '../../../../comman/custom_shapes/containers/TSearchContainers.dart';
+import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -39,6 +40,7 @@ class HomeScreen extends StatelessWidget {
                         icon: const Icon(Iconsax.shopping_bag))
                   ]),
             ),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             const Tsearchcontainers(
 
             )
