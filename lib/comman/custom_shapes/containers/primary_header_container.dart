@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/comman/custom_shapes/containers/tcircularcontainer.dart';
+import 'package:t_store/comman/custom_shapes/containers/tcircular.dart';
+import 'package:t_store/comman/custom_shapes/containers/tverticalimage.dart';
 import 'package:t_store/comman/custom_shapes/curved_shapes.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
