@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants/sizes.dart';
-import 'custom_shapes/tproductverticalcard.dart';
+import '../../utils/constants/sizes.dart';
+import '../custom_shapes/tproductverticalcard.dart';
 class TGridLayout extends StatelessWidget {
   const TGridLayout({
     super.key, required this.itemCount, this.mainAxisExtent, required this.itemBuilder,

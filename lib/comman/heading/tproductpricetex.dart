@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 class TProductprixe extends StatelessWidget {
   const TProductprixe({
-    super.key,
+    super.key, this.currency = '\$', required this.sign, this.maxlines = 1, this.isLarge= false , this.lineThrough = false,
   });
+final String currency, sign;
+final int maxlines;
+final bool isLarge;
+final lineThrough;
+
+  get islagre => null;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      '\$35.5',
+      currency + sign,
+
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      style: Theme.of(context).textTheme.headlineMedium,
+      style:islagre ?  Theme.of(context).textTheme.headlineMedium!.apply(decoration: lineThrough ? TextDecoration.lineThrough : null) : Theme.of(context).textTheme.titleLarge!.apply(decoration: lineThrough ? TextDecoration.lineThrough : null),
     );
   }
 }

@@ -5,6 +5,8 @@ import 'package:t_store/features/authentication/screen/mainhomescreen/home_scree
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import 'features/authentication/screen/mainhomescreen/store.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -42,9 +44,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(
-      color: Colors.purple,
-    ),
+  const Store(),
     Container(
       color: Colors.orange,
     ),

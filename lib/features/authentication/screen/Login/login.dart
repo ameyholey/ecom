@@ -98,13 +98,13 @@ class LoginSceern extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () => Get.to(()=> const NavigationMenu()), child: Text(TTexts.signIn)),
+                          onPressed: () => Get.to(()=> const NavigationMenu()), child: const Text(TTexts.signIn)),
                     ),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                          onPressed: () => Get.to(() => const SignupScreen()), child: Text(TTexts.createAccount)),
+                          onPressed: () => Get.to(() => const SignupScreen()), child: const Text(TTexts.createAccount)),
                     ),
                     const SizedBox(height: TSizes.spaceBtwSections),
                   ],

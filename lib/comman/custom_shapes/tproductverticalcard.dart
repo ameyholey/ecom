@@ -9,7 +9,8 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../utils/constants/image_strings.dart';
 import '../../utils/constants/sizes.dart';
-import '../tshadow.dart';
+import '../heading/tproductpricetex.dart';
+import '../widgets/tshadow.dart';
 import 'containers/tcircularicon.dart';
 import 'containers/troundedconner.dart';
 
@@ -49,7 +50,8 @@ class TProductVerticalCard extends StatelessWidget {
                       backgroundColor: TColors.secondary.withOpacity(0.8),
                       child: Text(
                         '25%',
-                        style: Theme.of(context)
+                        style: Theme
+                            .of(context)
                             .textTheme
                             .labelLarge!
                             .apply(color: TColors.black),
@@ -76,27 +78,21 @@ class TProductVerticalCard extends StatelessWidget {
                 children: [
                   const TProductTitleText(title: 'Green nike air'),
                   const SizedBox(
-                    height: TSizes.spaceBtwItems/2,
+                    height: TSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      TProductpricetext(context),
-                      const SizedBox(width: TSizes.xs),
-                      const Icon(Iconsax.verify,
-                          color: TColors.primary, size: TSizes.iconXs),
-                    ],
-                  ),
+                  TBrandtitletext(),
                   const Spacer(),
                   Row(
                     children: [
-                      TProducttitletex(),
+                      TProductprixe(sign: '35', lineThrough: true,
+                      ),
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(TSizes.cardRadiusMd),
                             bottomRight:
-                                Radius.circular(TSizes.productImageRadius),
+                            Radius.circular(TSizes.productImageRadius),
                           ),
                         ),
                         // BorderRadius.only
@@ -119,6 +115,6 @@ class TProductVerticalCard extends StatelessWidget {
       ),
     );
   }
-
+}
 
 
