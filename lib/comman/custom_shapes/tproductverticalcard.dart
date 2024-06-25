@@ -9,6 +9,7 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../utils/constants/image_strings.dart';
 import '../../utils/constants/sizes.dart';
+import '../heading/tbrandtitletext.dart';
 import '../heading/tproductpricetex.dart';
 import '../widgets/tshadow.dart';
 import 'containers/tcircularicon.dart';
@@ -80,7 +81,7 @@ class TProductVerticalCard extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  TBrandtitletext(),
+                  TBrandverifiedicon(title: '',),
                   const Spacer(),
                   Row(
                     children: [
