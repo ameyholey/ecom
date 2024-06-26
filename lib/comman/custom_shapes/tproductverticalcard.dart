@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/comman/heading/producttitletext.dart';
 import 'package:t_store/comman/images/troundedimage.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-
 import '../../utils/constants/image_strings.dart';
 import '../../utils/constants/sizes.dart';
 import '../heading/tbrandtitletext.dart';
@@ -73,7 +70,7 @@ class TProductVerticalCard extends StatelessWidget {
               height: TSizes.spaceBtwItems / 2,
             ),
             Padding(
-              padding: EdgeInsets.only(left: TSizes.sm),
+              padding: const EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,11 +78,11 @@ class TProductVerticalCard extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  TBrandverifiedicon(title: '',),
+                  const TBrandverifiedicon(title: 'nike',),
                   const Spacer(),
                   Row(
                     children: [
-                      TProductprixe(sign: '35', lineThrough: true,
+                      const TProductprixe(sign: '35', lineThrough: true,
                       ),
                       Container(
                         decoration: const BoxDecoration(

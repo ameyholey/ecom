@@ -1,15 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/comman/custom_shapes/containers/troundedconner.dart';
+import 'package:t_store/comman/custom_shapes/tbrandcard.dart';
 import 'package:t_store/comman/heading/tsectionheading.dart';
 import 'package:t_store/comman/widgets/appbar.dart';
+import 'package:t_store/comman/widgets/tgridlayout.dart';
+import 'package:t_store/comman/widgets/ttabbar.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../comman/custom_shapes/containers/TSearchContainers.dart';
-import '../../../../comman/custom_shapes/containers/tcircularimage.dart';
+
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
@@ -18,14 +20,16 @@ class Store extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(
-        title: Text('Store'),
-        actions: [
-          Icon(Iconsax.shop),
-        ],
-      ),
-      body: NestedScrollView(
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: const TAppBar(
+          title: Text('Store'),
+          actions: [
+            Icon(Iconsax.shop),
+          ],
+        ),
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxScrolled) {
             return [
               SliverAppBar(
@@ -37,20 +41,20 @@ class Store extends StatelessWidget {
                     : TColors.light,
                 expandedHeight: 400,
                 flexibleSpace: Padding(
-                  padding: EdgeInsets.all(TSizes.defaultSpace),
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems,
                       ),
-                      Tsearchcontainers(
+                      const Tsearchcontainers(
                         text: '',
                         onTap: null,
                         showBorder: true,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems,
                       ),
                       TSectionheading(
@@ -58,38 +62,102 @@ class Store extends StatelessWidget {
                         showActionButton: true,
                         onPressed: () {},
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems / 1.5,
                       ),
-                      TRoundedContainer(
-                        padding: EdgeInsets.all(TSizes.sm),
-                        showBorder: true,
-                        backgroundColor: Colors.transparent,
-                        child: Row(
-                          children: [
-                            Tcircularimage(
-                              isNetworkimage: false,
-                              image: TImages.clothIcon,
-                              backgroundColor: Colors.transparent,
-                              overlaycolor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.black,
-                            ),
-                            SizedBox(width: TSizes.spaceBtwItems/2,),
-                            Column(
-                              children: [
-
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      TGridLayout(
+                          mainAxisExtent: 80,
+                          itemCount: 4,
+                          itemBuilder: (_, index) {
+                            return const TBrandcard(
+                              showBroder: false,
+                            );
+                          }),
                     ],
                   ),
+                ),
+                bottom: const Ttabbar(
+                  // isScrollable: true,
+                  // indicatorColor: TColors.primary,
+                  // labelColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.primary,
+                  tabs: [
+                    Tab(
+                      child: Text('sports'),
+                    ),
+                    Tab(
+                      child: Text('sports'),
+                    ),
+                    Tab(
+                      child: Text('sports'),
+                    ),
+                    Tab(
+                      child: Text('sports'),
+                    ),
+                  ],
                 ),
               ),
             ];
           },
-          body: Container()),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    TBrandshowcase(),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
 
+class TBrandshowcase extends StatelessWidget {
+  const TBrandshowcase({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TRoundedContainer(
+      padding: const EdgeInsets.all(TSizes.md),
+      showBorder: true,
+      borderColor: TColors.darkGrey,
+      backgroundColor: Colors.transparent,
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      child: Column(
+        children: [
+          const TBrandcard(showBroder: true),
+          Row(
+            children: [
+              brandtopProductwidgets(context),
+              brandtopProductwidgets(context),
+              brandtopProductwidgets(context),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget brandtopProductwidgets(String image, context) {
+    return Expanded(
+      child: TRoundedContainer(
+        height: 100,
+        backgroundColor: THelperFunctions.isDarkMode(context)
+            ? TColors.darkGrey
+            : TColors.light,
+        margin: const EdgeInsets.only(right: TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.md),
+        child: const Image(
+          fit: BoxFit.contain,
+          image: AssetImage(TImages.productImage3),
+        ),
+      ),
+    );
+  }
+}
