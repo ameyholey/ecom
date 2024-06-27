@@ -12,6 +12,8 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../comman/custom_shapes/containers/TSearchContainers.dart';
 
+import '../../../../comman/tbrandshowcase.dart';
+import '../../../../comman/tcategorytab.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
@@ -98,16 +100,9 @@ class Store extends StatelessWidget {
               ),
             ];
           },
-          body: TabBarView(
+          body:   TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    TBrandshowcase(),
-                  ],
-                ),
-              )
+              Tcategorytab(),   Tcategorytab(),   Tcategorytab(),   Tcategorytab(),
             ],
           ),
         ),
@@ -116,48 +111,4 @@ class Store extends StatelessWidget {
   }
 }
 
-class TBrandshowcase extends StatelessWidget {
-  const TBrandshowcase({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return TRoundedContainer(
-      padding: const EdgeInsets.all(TSizes.md),
-      showBorder: true,
-      borderColor: TColors.darkGrey,
-      backgroundColor: Colors.transparent,
-      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-      child: Column(
-        children: [
-          const TBrandcard(showBroder: true),
-          Row(
-            children: [
-              brandtopProductwidgets(context),
-              brandtopProductwidgets(context),
-              brandtopProductwidgets(context),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget brandtopProductwidgets(String image, context) {
-    return Expanded(
-      child: TRoundedContainer(
-        height: 100,
-        backgroundColor: THelperFunctions.isDarkMode(context)
-            ? TColors.darkGrey
-            : TColors.light,
-        margin: const EdgeInsets.only(right: TSizes.sm),
-        padding: const EdgeInsets.all(TSizes.md),
-        child: const Image(
-          fit: BoxFit.contain,
-          image: AssetImage(TImages.productImage3),
-        ),
-      ),
-    );
-  }
-}
