@@ -10,14 +10,14 @@ class Tcategorytab extends StatelessWidget {
   const Tcategorytab({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         children: [
-          TSectionheading(
+          const TSectionheading(
             title: 'you might ',
             showActionButton: true,
-          ), SizedBox(height: TSizes.spaceBtwItems),
+          ), const SizedBox(height: TSizes.spaceBtwItems),
           // TBrandshowcase(
           //   images: [
           //     TImages.productImage3,
@@ -26,7 +26,7 @@ class Tcategorytab extends StatelessWidget {
           //   ],
           // ),
 
-          TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductVerticalCard())
+          TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductVerticalCard())
 
 
         ],
