@@ -27,17 +27,15 @@ class TBrandverifiedicon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-     Flexible(
-       child: Tbrandtitletext(
-           color: textColor,
-           title: title,
-         maxlines: maxLines,
-         textAlign: textAlign,
-           brandTextsizes : brandTextSizes,
+     Tbrandtitletext(
+         color: textColor,
+         title: title,
+       maxlines: maxLines,
+       textAlign: textAlign,
+         brandTextsizes : brandTextSizes,
 
 
-          ),
-     ),
+        ),
         const SizedBox(width: TSizes.xs),
        Icon(Iconsax.verify, size: TSizes.iconXs,color: iconColor,),
       ],

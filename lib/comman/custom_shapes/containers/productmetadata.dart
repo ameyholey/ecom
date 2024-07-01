@@ -19,7 +19,7 @@ class Productmetadat extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+        Column(
           children: [
             TRoundedContainer(
               radius: TSizes.sm,
@@ -39,9 +39,13 @@ class Productmetadat extends StatelessWidget {
                   .titleSmall!
                   .apply(color: TColors.black),
             ),
-            const TProductprixe(
-              sign: '\$255',
-              isLarge: true,
+            Positioned(
+              left: 0,
+
+              child: const TProductprixe(
+                sign: '255',
+                isLarge: true,
+              ),
             ),
             const TProductTitleText(title: 'Green Nike shoes'),
             const Row(
