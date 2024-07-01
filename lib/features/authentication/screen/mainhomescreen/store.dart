@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/comman/custom_shapes/containers/troundedconner.dart';
 import 'package:t_store/comman/custom_shapes/tbrandcard.dart';
 import 'package:t_store/comman/heading/tsectionheading.dart';
 import 'package:t_store/comman/widgets/appbar.dart';
@@ -9,17 +7,13 @@ import 'package:t_store/comman/widgets/tgridlayout.dart';
 import 'package:t_store/comman/widgets/ttabbar.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-
 import '../../../../comman/custom_shapes/containers/TSearchContainers.dart';
-
-import '../../../../comman/tbrandshowcase.dart';
 import '../../../../comman/tcategorytab.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -74,8 +68,7 @@ class Store extends StatelessWidget {
                             return const TBrandcard(
                               showBroder: false,
                             );
-                          }),
-                    ],
+                          }),],
                   ),
                 ),
                 bottom: const Ttabbar(
@@ -100,7 +93,7 @@ class Store extends StatelessWidget {
               ),
             ];
           },
-          body:   TabBarView(
+          body: TabBarView(
             children: [
               Tcategorytab(),   Tcategorytab(),   Tcategorytab(),   Tcategorytab(),
             ],

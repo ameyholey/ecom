@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/authentication/screen/mainhomescreen/accountscreen.dart';
+
 import 'package:t_store/features/authentication/screen/mainhomescreen/home_screen.dart';
 import 'package:t_store/features/authentication/screen/mainhomescreen/wishlist.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import 'features/authentication/screen/mainhomescreen/setting.dart';
 import 'features/authentication/screen/mainhomescreen/store.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -46,6 +47,6 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),    const Store(),
 FavScreen(),
-    SettingScreen(),
+    Setting(),
   ];
 }
