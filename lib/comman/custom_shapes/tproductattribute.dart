@@ -22,11 +22,11 @@ class Tproductattribute extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  TSectionheading(
+                  const TSectionheading(
                     title: 'varitaion',
                     showActionButton: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: TSizes.spaceBtwItems,
                   ),
                   Row(
@@ -35,10 +35,10 @@ class Tproductattribute extends StatelessWidget {
                         '\$25%',
                         style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
 
-                      ),  SizedBox(
+                      ),  const SizedBox(
                         width: TSizes.spaceBtwItems,
                       ),
-                      TProductprixe(sign: '20'),
+                      const TProductprixe(sign: '20'),
                     ],
                   ),
                 ],
@@ -46,12 +46,46 @@ class Tproductattribute extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: TSizes.spaceBtwItems),
+        const SizedBox(height: TSizes.spaceBtwItems),
         Column(
+crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionheading(title: 'Colors'),
-            SizedBox(height: TSizes.spaceBtwItems/2),
-            TChoiceclip(text: 'Nike', selected: true,)
+            const TSectionheading(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems/2),
+           Wrap(
+             spacing: 8,
+             children: [
+               TChoiceclip(text: 'Green', selected: false, onSelected: (value){},),
+               TChoiceclip(text: 'blue', selected: true,  onSelected: (value){},),
+               TChoiceclip(text: 'yellow', selected: false,onSelected: (value){},),
+               TChoiceclip(text: 'Green', selected: false, onSelected: (value){},),
+               TChoiceclip(text: 'blue', selected: true,  onSelected: (value){},),
+               TChoiceclip(text: 'yellow', selected: false,onSelected: (value){},),
+               TChoiceclip(text: 'Green', selected: false, onSelected: (value){},),
+               TChoiceclip(text: 'blue', selected: true,   onSelected: (value){},),
+               TChoiceclip(text: 'yellow', selected: false,onSelected: (value){},)
+
+             ],
+           )
+
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TSectionheading(title: 'Size'),
+            const SizedBox(height: TSizes.spaceBtwItems/2),
+        Wrap(
+          spacing: 8,
+          children: [
+
+            TChoiceclip(text: 'EU 34', selected: true,onSelected: (value){},),
+            TChoiceclip(text: 'EU 36', selected: false,onSelected: (value){},),
+            TChoiceclip(text: 'EU 38', selected: false,onSelected: (value){},),
+
+
+          ],
+        ),
           ],
         ),
       ],

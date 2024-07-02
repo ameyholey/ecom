@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
 import 'package:t_store/comman/custom_shapes/containers/productmetadata.dart';
+import 'package:t_store/comman/heading/tsectionheading.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../comman/custom_shapes/tproductattribute.dart';
 import '../../../comman/tpromslider.dart';
+import '../../../comman/widgets/tbottomaddtocart.dart';
 
 
 class Productdetail extends StatelessWidget {
@@ -14,6 +17,7 @@ class Productdetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
+      bottomNavigationBar: const Tbottomaddtocart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -58,6 +62,25 @@ class Productdetail extends StatelessWidget {
                   //
                   const Productmetadat(),
                   const Tproductattribute(),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  SizedBox( width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text('Checkout'),)),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  const TSectionheading(title: 'Desprication',showActionButton: false,),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  const ReadMoreText(
+                    'This product description for blue shoes There are more thing that can be added in this read more text widget',
+                  trimLines: 2,
+                   trimMode: TrimMode.Line,
+                    trimCollapsedText: 'show more',
+                    trimExpandedText: 'less',
+                    moreStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+                    lessStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+
+                  ),
+                  const Divider(),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  TSectionheading(title: 'Reviews(200)',onPressed: (){},),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
                 ],
               ),
             ),
