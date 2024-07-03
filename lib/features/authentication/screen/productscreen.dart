@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/comman/custom_shapes/containers/productmetadata.dart';
 import 'package:t_store/comman/heading/tsectionheading.dart';
+import 'package:t_store/comman/tratingandreview.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../comman/custom_shapes/tproductattribute.dart';
@@ -61,6 +63,7 @@ class Productdetail extends StatelessWidget {
                   //
                   //
                   const Productmetadat(),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
                   const Tproductattribute(),
                   const SizedBox(height: TSizes.spaceBtwItems,),
                   SizedBox( width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text('Checkout'),)),
@@ -79,7 +82,7 @@ class Productdetail extends StatelessWidget {
                   ),
                   const Divider(),
                   const SizedBox(height: TSizes.spaceBtwItems,),
-                  TSectionheading(title: 'Reviews(200)',onPressed: (){},),
+                  TSectionheading(title: 'Reviews(200)',onPressed: () => Get.to(()=> TRating())),
                   const SizedBox(height: TSizes.spaceBtwItems,),
                 ],
               ),

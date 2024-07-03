@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/comman/custom_shapes/containers/primary_header_container.dart';
 import 'package:t_store/comman/custom_shapes/containers/tcircular.dart';
@@ -7,6 +9,7 @@ import 'package:t_store/comman/widgets/appbar.dart';
 import 'package:t_store/comman/widgets/settingmenu.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
+import '../../../../TUseraddress.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
@@ -32,9 +35,9 @@ class Setting extends StatelessWidget {
                   ),
                 ),
         ListTile(
-                  // leading: Tcircularimage(image: TImages.user,height: 50,width: 50,padding: 0,),
+          leading: const Tcircularimage(image: TImages.user,height: 50,width: 50,padding: 0,),
                   title:  Text(
-                    'Account',
+                    'Amey holey',
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall!
@@ -49,7 +52,7 @@ class Setting extends StatelessWidget {
                   ),
 
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
@@ -62,9 +65,9 @@ Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
    children: [
      const Text('Account setting'),
      const SizedBox(height: TSizes.defaultSpace,),
-     TSettingmenutitle(icon: Iconsax.safe_home, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),
-     TSettingmenutitle(icon: Iconsax.shopping_bag, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),
-     TSettingmenutitle(icon: Iconsax.bag_tick, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),
+     TSettingmenutitle(icon: Iconsax.safe_home, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: () => Get.to(()=> TUseradress ())),
+     TSettingmenutitle(icon: Iconsax.shopping_bag, title: 'Order', subtitle: 'set delivery address',trailing: null, onTap: (){}),
+     TSettingmenutitle(icon: Iconsax.bag_tick, title: '', subtitle: 'set delivery address',trailing: null, onTap: (){}),
      TSettingmenutitle(icon: Iconsax.bank, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),
      TSettingmenutitle(icon: Iconsax.discount_shape, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),
      TSettingmenutitle(icon: Iconsax.notification, title: 'my adderss', subtitle: 'set delivery address',trailing: null, onTap: (){}),

@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/comman/custom_shapes/containers/tverticalimage.dart';
 import 'package:t_store/comman/custom_shapes/containers/primary_header_container.dart';
 import 'package:t_store/comman/custom_shapes/tproductverticalcard.dart';
 import 'package:t_store/comman/widgets/appbar.dart';
+import 'package:t_store/features/authentication/screen/mainhomescreen/cart.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import '../../../../comman/custom_shapes/containers/TSearchContainers.dart';
 import '../../../../comman/custom_shapes/containers/tpromoSlider.dart';
 import '../../../../comman/heading/tsectionheading.dart';
 import '../../../../comman/widgets/tgridlayout.dart';
+import '../../../../tadnewadress.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
@@ -47,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       actions: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed:() => Get.to(()=> Tcartscreen()),
                             icon: const Icon(Iconsax.shopping_bag))
                       ]),
                   const SizedBox(
@@ -79,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   children: [
-                    TPromoSlider(),
+                    const TPromoSlider(),
                     TGridLayout(itemCount: 4,itemBuilder: (_, index) => TProductVerticalCard(),),
                   ],
                 )),
